@@ -127,12 +127,10 @@ $(document).ready(function(){
         var re = /current/;
 
         $(".sidebar_jdvip,.shortcut-login").click(function(){
-            $("#jd_login").fadeIn(300);
-            $(".login_QR").stop().animate({
-                    "left":"20px"
-                },200,function(){
-                    $(".login_help").fadeIn(400);
-                });
+            $("#jd_login")
+                .fadeIn(300)
+                .find(".login_pic")
+                .trigger("mouseenter");
         });           
     
         $(".login-tab").on("click",function(){
@@ -171,17 +169,18 @@ $(document).ready(function(){
             "focus":function(){
                 $(this).siblings("label").css({
                     "background-position-y":"-48px"
-                }).siblings(".clear-btn").show();
+                }).siblings("span").show();
             },
             "focusout":function(){
                 $(this).siblings("label").css({
                     "background-position-y":0
-                }).siblings(".clear-btn").hide();
+                });
             }
         });
 
         $(".clear-btn").on("click",function(){
-            $(this).siblings("input").val("");
+            
+            $(this).hide().prev().val("");
         });
 
         $(".login-title .close").on("click",function(){
