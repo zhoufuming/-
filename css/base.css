@@ -818,10 +818,10 @@ s, i, em {
 /* 左侧边栏部分开始 */
 .leftsidebar {
     position: fixed;
-    top: 50px;
+    top: 50%;
     left: 10px;
+    margin-top: -268px;
     z-index: 9990;
-    height: 100%;
     display: none;
 }
 .leftsidebar_list {
